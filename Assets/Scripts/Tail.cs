@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class Tail : Player
 {
     [SerializeField] private Transform _target;

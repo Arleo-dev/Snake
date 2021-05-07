@@ -9,12 +9,10 @@ public class Player : MonoBehaviour
     private float rotatioSpeed = 360;
     private const string LevelName = "GameOver";
     private Transform _transform;
-    private Tail tail;
 
     private void Start()
     {
         _transform = GetComponent<Transform>();
-        tail = GetComponent<Tail>();
     }
     private void Update()
     {
