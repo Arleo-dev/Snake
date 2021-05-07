@@ -8,9 +8,11 @@ public class MainMenu : MonoBehaviour
     private float buttonMinHeight = 60f;
     private Font captionFont;
     private Font buttonFont;
-    private string mainMenuText = "Main menu";
-    private string startButtonText = "Start game";
-    private string exitButtonText = "Exit";
+    private const string MainMenuText = "Main menu";
+    private const string StartButtonText = "Start game";
+    private const string ExitButtonText = "Exit";
+    private const string LevelName = "Level";
+
 
     private void OnGUI()
     {
@@ -24,18 +26,18 @@ public class MainMenu : MonoBehaviour
             captionStyle.font = captionFont;
             captionStyle.alignment = TextAnchor.MiddleCenter;
             captionStyle.fontSize = 70;
-            GUILayout.Label(mainMenuText, captionStyle);
+            GUILayout.Label(MainMenuText, captionStyle);
             GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
             buttonStyle.font = buttonFont;
             buttonStyle.margin = new RectOffset(20, 20, 3, 3);
             buttonStyle.fontSize = 40;
             GUILayout.FlexibleSpace();
-            if(GUILayout.Button(startButtonText, buttonStyle, GUILayout.MinHeight(buttonMinHeight)))
+            if(GUILayout.Button(StartButtonText, buttonStyle, GUILayout.MinHeight(buttonMinHeight)))
             {
-                Application.LoadLevel("Level");
+                Application.LoadLevel(LevelName);
 
             }
-            if (GUILayout.Button(exitButtonText, buttonStyle, GUILayout.MinHeight(buttonMinHeight)))
+            if (GUILayout.Button(ExitButtonText, buttonStyle, GUILayout.MinHeight(buttonMinHeight)))
             {
                 Application.Quit();
 

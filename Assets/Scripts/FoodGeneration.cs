@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class FoodGeneration : MonoBehaviour
 {
-    public GameObject foodPref;
+    [SerializeField] private GameObject foodPref;
     private GameObject food;
     private Vector3 curPos;
-    void AddNewFood()
+    private void AddNewFood()
     {
         RandPos();
         food = GameObject.Instantiate(foodPref, curPos, Quaternion.identity) as GameObject;
     }
-
-    
     private void RandPos()
     {
         curPos = new Vector3(Random.Range(-9f, 9f), 0.5f, Random.Range(-9f, 9f));    

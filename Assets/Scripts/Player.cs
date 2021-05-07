@@ -2,31 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterController))]
 public class Player : MonoBehaviour
 {
+    [SerializeField] private GameObject food;
     private float speed = 2f;
     private float rotatioSpeed = 360;
-    private CharacterController _controller;
-    public GameObject food;
+    private const string LevelName = "GameOver";
+    private Transform _transform;
     private Tail tail;
-    void Start()
-    {
-        _controller = GetComponent<CharacterController>();
-    }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
+    {
+        _transform = GetComponent<Transform>();
+        tail = GetComponent<Tail>();
+    }
+    private void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
         transform.Rotate(0, rotatioSpeed * Time.deltaTime * horizontal, 0);
-        _controller.Move(transform.forward * speed * Time.deltaTime);
+        transform.position = _transform.position + _transform.forward * speed * Time.deltaTime;
     }
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (hit.collider.gameObject != food)
+        
+        if(other.GetComponent<Food>())
         {
-            Application.LoadLevel("GameOver");
+            speed += 0.1f;
         }
+        else
+        {
+            Application.LoadLevel(LevelName);
+        }
+
+
     }
 }
