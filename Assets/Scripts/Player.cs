@@ -34,7 +34,5 @@ public class Player : MonoBehaviour
         {
             Application.LoadLevel(LevelName);
         }
-
-
     }
 }
