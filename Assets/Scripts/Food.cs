@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider _playerCheck)
     {
-        if (other.GetComponent<Player>())
+        if (_playerCheck.GetComponent<Player>())
         {
-            other.GetComponent<Tail>().AddBody();
+            _playerCheck.GetComponent<Tail>().AddBody();
             Destroy(gameObject);
             Debug.Log("Point");
         }

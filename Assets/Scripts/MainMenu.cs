@@ -6,8 +6,8 @@ public class MainMenu : MonoBehaviour
 {
     private Vector2 _menuSize = new Vector2(500, 300);
     private float buttonMinHeight = 60f;
-    private Font captionFont;
-    private Font buttonFont;
+    private Font _captionFont;
+    private Font _buttonFont;
     private const string MainMenuText = "Main menu";
     private const string StartButtonText = "Start game";
     private const string ExitButtonText = "Exit";
@@ -23,12 +23,12 @@ public class MainMenu : MonoBehaviour
         GUILayout.BeginArea(_rect, GUI.skin.textArea);
         {
             GUIStyle captionStyle = new GUIStyle(GUI.skin.label);
-            captionStyle.font = captionFont;
+            captionStyle.font = _captionFont;
             captionStyle.alignment = TextAnchor.MiddleCenter;
             captionStyle.fontSize = 70;
             GUILayout.Label(MainMenuText, captionStyle);
             GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
-            buttonStyle.font = buttonFont;
+            buttonStyle.font = _buttonFont;
             buttonStyle.margin = new RectOffset(20, 20, 3, 3);
             buttonStyle.fontSize = 40;
             GUILayout.FlexibleSpace();

@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private GameObject food;
     private float speed = 2f;
     private float rotatioSpeed = 360;
     private const string LevelName = "GameOver";
     private Transform _transform;
-
+    
     private void Start()
     {
         _transform = GetComponent<Transform>();
