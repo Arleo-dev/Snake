@@ -11,6 +11,4 @@ public class LoadLevelByTimer : MonoBehaviour
         yield return new WaitForSeconds(delay);
         Application.LoadLevel(LevelName);
     }
-
-    
 }

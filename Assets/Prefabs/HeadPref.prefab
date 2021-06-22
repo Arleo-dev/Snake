@@ -16,7 +16,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!65 &3891464300278234070
+--- !u!65 &8463723257161946767
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27,8 +27,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.4}
-  m_Center: {x: 0, y: 0.25, z: 0.5}
+  m_Size: {x: 0.35, y: 0.4, z: 0.3}
+  m_Center: {x: 0, y: 0.25, z: 0.45}
 --- !u!114 &3503600489096116641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,7 +41,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0bf17d01ad92d449be7535dcf12b8c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 3953696689362354699, guid: 2b1e6341ed08cbd429bf868240fdcab8, type: 3}
+  OnEat:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8335186413681081929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,6 +58,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 6749911122897552352}
   _body: {fileID: 8661427959861602759, guid: 221aedd0025696c45beaf556520f64a4, type: 3}
+--- !u!95 &757194281047197459
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6262062642969712986}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 78f538b3c24a41542baf225fc9ca9ada, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6495942297022702603
 PrefabInstance:
   m_ObjectHideFlags: 0

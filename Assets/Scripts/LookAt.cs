@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LookAt : MonoBehaviour
 {
-    [SerializeField] private Transform _target; 
+    [SerializeField] private Transform _target;
     void Update()
     {
         transform.LookAt(_target);
