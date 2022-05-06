@@ -5,22 +5,12 @@ using UnityEngine;
 public class CameraSwitch : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
-    private void Start()
-    {
-        _camera.enabled = false;
-    }
+    [SerializeField] private GameObject _point;
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Player>())
         {
-            _camera.enabled = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.GetComponent<Player>())
-        {
-            _camera.enabled = false;
+            _camera.transform.position = _point.transform.position;
         }
     }
 }

@@ -32,7 +32,7 @@ public class FoodGenerator : MonoBehaviour
     }
     private void RandPos()
     {
-        _curPos = new Vector3(Random.Range(xSize, -xSize), yPos, Random.Range(zSize, -zSize));
+        _curPos = new Vector3(Random.Range(xSize, -xSize), yPos / 0.7f, Random.Range(zSize, -zSize));
     }
     private void OnTriggerEnter(Collider other)
     {
